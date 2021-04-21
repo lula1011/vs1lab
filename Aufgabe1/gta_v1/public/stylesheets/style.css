@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+input:invalid { background: hsl(5,30%,80%) }
+input:valid   { border-color: black}
+

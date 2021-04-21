@@ -22,34 +22,60 @@
 
 		<main>
 
-			<section class="tagging">
-				<h2>Tagging</h2>
+			<style>
+				.sidebyside {float: left;}
+				.sidebyside section {width: 30%; float: left;}
+			</style>
+			<section class="sidebyside">
+				<section class="tagging">
+					<h2>Tagging</h2>
 
-				<!-- ############### Aufgabe1a Form1 Start -->
-				<form id="tag-form" action="/tagging" method="post"></form>
-				<!-- ############### Aufgabe1a Form1 Ende -->
+					<!-- ############### Aufgabe1a Form1 Start -->
+					<form id="tag-form" action="/tagging" method="post"></form>
+					<fieldset style="width:250px">
+						<legend>Enter new GeoTag</legend>
+						<label>latitude: <br><input type="text" id="LATinput" size="20" placeholder="49.006889" required></label>
+						<p>
+						<label>longitude: <br><input type="text" id="LONGinput" size="20" placeholder="8.403653" required></label>
+						</p><p>
+						<label>name: <br><input type="text" id="NAMEinput" size="20" placeholder="enter a name" maxlength="10" required></label>
+						</p><p>
+						<label>hashtag: <br><input type="text" id="HASHinput" size="20" placeholder="# + max. 10 letters" pattern="[#]{1}[A-Za-z]{0,10}"></label>
+						</p>
+						<button id="SUBMITbutton">submit </button>
+					</fieldset>
+					<!-- ############### Aufgabe1a Form1 Ende -->
 
-			</section>
+				</section>
 
-			<section class="discovery">
-				<h2>Discovery</h2>
+				<section class="discovery">
+					<h2>Discovery</h2>
 
-				<!-- ############### Aufgabe1a Form2 Start -->
-				<form id="filter-form" action="/discovery" method="post"></form>
-				<!-- ############### Aufgabe1a Form2 Ende -->
+					<!-- ############### Aufgabe1a Form2 Start -->
+					<form id="filter-form" action="/discovery" method="post"></form>
+					<fieldset style="width:900px">
+						<legend>Filter by Searchterm</legend>
+						<p>
+						<label><input type="text" id="SEARCHinput" size="20" placeholder="search term"></label>
+						</p><p>
+							<button id="APPLYbutton">apply </button>
+						</p>
+					</fieldset>
+					<!-- ############### Aufgabe1a Form2 Ende -->
 
-				<div class="taglist">
-					<ul id="results">
-						<li>Castle (49.01379, 8.404435) #sight</li>
-						<li>IWI (49.01379, 8.390071) #edu</li>
-					</ul>
-				</div>
+					
+					<div class="taglist">
+						<ul id="results">
+							<li>Castle (49.01379, 8.404435) #sight</li>
+							<li>IWI (49.01379, 8.390071) #edu</li>
+						</ul>
+					</div>
 
-				<div class="tagmap">
-					<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-					<div class="caption">Result map</div>
-				</div>
-
+					<div class="tagmap">
+						<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
+						<div class="caption">Result map</div>
+					</div>
+				</section>
 			</section>
 
 		</main>
