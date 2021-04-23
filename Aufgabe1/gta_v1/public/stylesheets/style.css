@@ -10,3 +10,70 @@ a {
 input:invalid { background: hsl(5,30%,80%) }
 input:valid   { border-color: black}
 
+.header {background-color: rgb(129, 129, 129); padding: 15px; color: aliceblue}
+.footer {background-color: rgb(129, 129, 129); padding: 15px; color: aliceblue}
+
+#textbox {
+  height: 20px;
+}
+
+#results {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#list-item {
+  padding: 5px;
+  color: aliceblue;
+  background-color: rgb(91, 150, 189);
+}
+
+/*flexbox container 1*/
+  .flexbox-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .flexbox-c1-item {
+    margin: 10px;
+    min-width: 200px;
+    
+  }
+
+  .flexbox-c1-item-1 { /*tagging*/
+    flex-grow: 1;
+    max-width: 300px;
+    
+  }
+
+  .flexbox-c1-item-2 { /*discovery*/
+    flex-grow: 4;
+    
+  }
+
+/*flexbox container 1*/
+
+/*flexbox container 2 (inside container 1)*/
+  .flexbox-container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+  }
+
+  .flexbox-c2-item {
+    margin: 15px;
+    
+  }
+
+  .flexbox-c2-item-1 { /*taglist*/
+    
+  }
+
+  .flexbox-c2-item-2 { /*tagmap*/
+    flex-grow: 1;
+    
+  }
+/*flexbox container 2 (inside container 1)*/

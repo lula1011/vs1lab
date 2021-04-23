@@ -10,7 +10,7 @@
 
 	<body>
 
-		<header>
+		<header class="header">
 			<img src="./images/location.png" width="100"
 					alt="an image of a map and location">
 			<h1>GeoTagApp</h1>
@@ -21,66 +21,74 @@
 		</header>
 
 		<main>
+			<div class="flexbox-container-1">
+				<div class="flexbox-c1-item flexbox-c1-item-1">
+					<section class="tagging">
+						<h2>Tagging</h2>
 
-			<style>
-				.sidebyside {float: left;}
-				.sidebyside section {width: 30%; float: left;}
-			</style>
-			<section class="sidebyside">
-				<section class="tagging">
-					<h2>Tagging</h2>
+						<!-- ############### Aufgabe1a Form1 Start -->
+						<form id="tag-form" action="/tagging" method="post"></form>
+						<fieldset>
+							<legend>Enter new GeoTag</legend>
+							<form action="/action_page.php">
+							<p>
+							<label>latitude: <br><input type="text" id="textbox" size="20" placeholder="49.006889" required></label>
+							</p><p>
+							<label>longitude: <br><input type="text" id="textbox" size="20" placeholder="8.403653" required></label>
+							</p><p>
+							<label>name: <br><input type="text" id="textbox" size="20" placeholder="enter a name" maxlength="10" required></label>
+							</p><p>
+							<label>hashtag: <br><input type="text" id="textbox" size="20" placeholder="# + max. 10 letters" pattern="[#]{1}[A-Za-z]{0,10}"></label>
+							</p>
+							<button id="SUBMITbutton">submit </button>
+							</form>
+						</fieldset>
+						<!-- ############### Aufgabe1a Form1 Ende -->
 
-					<!-- ############### Aufgabe1a Form1 Start -->
-					<form id="tag-form" action="/tagging" method="post"></form>
-					<fieldset style="width:250px">
-						<legend>Enter new GeoTag</legend>
-						<label>latitude: <br><input type="text" id="LATinput" size="20" placeholder="49.006889" required></label>
-						<p>
-						<label>longitude: <br><input type="text" id="LONGinput" size="20" placeholder="8.403653" required></label>
-						</p><p>
-						<label>name: <br><input type="text" id="NAMEinput" size="20" placeholder="enter a name" maxlength="10" required></label>
-						</p><p>
-						<label>hashtag: <br><input type="text" id="HASHinput" size="20" placeholder="# + max. 10 letters" pattern="[#]{1}[A-Za-z]{0,10}"></label>
-						</p>
-						<button id="SUBMITbutton">submit </button>
-					</fieldset>
-					<!-- ############### Aufgabe1a Form1 Ende -->
+					</section>
+				</div>
 
-				</section>
+				<div class="flexbox-c1-item flexbox-c1-item-2">
+					<section class="discovery">
+						<h2>Discovery</h2>
 
-				<section class="discovery">
-					<h2>Discovery</h2>
-
-					<!-- ############### Aufgabe1a Form2 Start -->
-					<form id="filter-form" action="/discovery" method="post"></form>
-					<fieldset style="width:900px">
-						<legend>Filter by Searchterm</legend>
-						<p>
-						<label><input type="text" id="SEARCHinput" size="20" placeholder="search term"></label>
-						</p><p>
+						<!-- ############### Aufgabe1a Form2 Start -->
+						<form id="filter-form" action="/discovery" method="post"></form>
+						<fieldset>
+							<legend>Filter by Searchterm</legend>
+							<form action="/action_page.php">
+							<p>
+							<label><input type="text" id="textbox" size="20" placeholder="search term"></label>
+							</p><p>
 							<button id="APPLYbutton">apply </button>
-						</p>
-					</fieldset>
-					<!-- ############### Aufgabe1a Form2 Ende -->
+							</p>
+							</form>
+						</fieldset>
+						<!-- ############### Aufgabe1a Form2 Ende -->
 
-					
-					<div class="taglist">
-						<ul id="results">
-							<li>Castle (49.01379, 8.404435) #sight</li>
-							<li>IWI (49.01379, 8.390071) #edu</li>
-						</ul>
-					</div>
+						<div class="flexbox-container-2">
+							<div class="flexbox-c2-item flexbox-c2-item-1">
+								<div class="taglist">
+									<ul id="results">
+										<div id="list-item"><li>Castle (49.01379, 8.404435) #sight</li></div> <br>
+										<div id="list-item"><li>IWI (49.01379, 8.390071) #edu</li></div>
+									</ul>
+								</div>
+							</div>
 
-					<div class="tagmap">
-						<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-						<div class="caption">Result map</div>
-					</div>
-				</section>
-			</section>
-
+							<div class="flexbox-c2-item flexbox-c2-item-2">
+								<div class="tagmap">
+									<img id="result-img" width="60%" height="auto" src="./images/mapview.jpg" alt="a map with locations"/>
+									<div class="caption">Result map</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
 		</main>
 
-		<footer>
+		<footer class="footer">
 			<span>2017 by LKIT</span>
 		</footer>
 
