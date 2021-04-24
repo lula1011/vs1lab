@@ -7,6 +7,11 @@ a {
   color: #00B7FF;
 }
 
+img {
+  max-width: 500px;
+  min-width: 200px;
+}
+
 input:invalid { background: hsl(5,30%,80%) }
 input:valid   { border-color: black}
 
@@ -20,19 +25,24 @@ input:valid   { border-color: black}
 #results {
   margin: 0;
   padding: 0;
-  list-style-type: none;
 }
 
-#list-item {
+ul > li {
+  list-style-type: none;
   padding: 5px;
-  color: aliceblue;
+  margin-bottom: 10px;
   background-color: rgb(91, 150, 189);
+  color: aliceblue;
+  border-radius: 5px;
+}
+
+legend {
+  font-size: 16px;
 }
 
 /*flexbox container 1*/
   .flexbox-container-1 {
     display: flex;
-    flex-wrap: wrap;
 
   }
 
@@ -58,8 +68,8 @@ input:valid   { border-color: black}
 /*flexbox container 2 (inside container 1)*/
   .flexbox-container-2 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: start;
+    align-items: start;
   
   }
 
@@ -69,7 +79,7 @@ input:valid   { border-color: black}
   }
 
   .flexbox-c2-item-1 { /*taglist*/
-    
+    flex-grow: 0;
   }
 
   .flexbox-c2-item-2 { /*tagmap*/
@@ -77,3 +87,15 @@ input:valid   { border-color: black}
     
   }
 /*flexbox container 2 (inside container 1)*/
+
+@media only screen and (max-width: 700px) {
+  .flexbox-container-1 {
+      flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .flexbox-container-2 {
+      flex-direction: column;
+  }
+}
