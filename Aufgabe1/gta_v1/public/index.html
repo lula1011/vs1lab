@@ -27,22 +27,21 @@
 						<h2>Tagging</h2>
 
 						<!-- ############### Aufgabe1a Form1 Start -->
-						<form id="tag-form" action="/tagging" method="post"></form>
-						<fieldset>
-							<legend>Enter new GeoTag</legend>
-							<form action="/action_page.php">
-							<p>
-							<label>latitude: <br><input type="text" id="textbox" size="20" placeholder="49.006889" required></label>
-							</p><p>
-							<label>longitude: <br><input type="text" id="textbox" size="20" placeholder="8.403653" required></label>
-							</p><p>
-							<label>name: <br><input type="text" id="textbox" size="20" placeholder="enter a name" maxlength="10" required></label>
-							</p><p>
-							<label>hashtag: <br><input type="text" id="textbox" size="20" placeholder="# + max. 10 letters" pattern="[#]{1}[A-Za-z]{0,10}"></label>
-							</p>
-							<button id="SUBMITbutton">submit </button>
-							</form>
-						</fieldset>
+						<form id="tag-form" action="/tagging" method="post">
+							<fieldset>
+								<legend>Enter new GeoTag</legend>
+								<p>
+								<label>latitude: <br><input type="text" class="textbox" size="20" placeholder="49.006889" required></label>
+								</p><p>
+								<label>longitude: <br><input type="text" class="textbox" size="20" placeholder="8.403653" required></label>
+								</p><p>
+								<label>name: <br><input type="text" class="textbox" size="20" placeholder="enter a name" maxlength="10" required></label>
+								</p><p>
+								<label>hashtag: <br><input type="text" class="textbox" size="20" placeholder="# + max. 10 letters" pattern="[#]{1}[A-Za-z]{1,10}"></label>
+								</p>
+								<button id="SUBMITbutton">submit </button>
+							</fieldset>
+						</form>
 						<!-- ############### Aufgabe1a Form1 Ende -->
 
 					</section>
@@ -53,17 +52,18 @@
 						<h2>Discovery</h2>
 
 						<!-- ############### Aufgabe1a Form2 Start -->
-						<form id="filter-form" action="/discovery" method="post"></form>
-						<fieldset>
-							<legend>Filter by Searchterm</legend>
-							<form action="/action_page.php">
-							<p>
-							<label><input type="text" id="textbox" size="20" placeholder="search term"></label>
-							</p><p>
-							<button id="APPLYbutton">apply </button>
-							</p>
-							</form>
-						</fieldset>
+						<form id="filter-form" action="/discovery" method="post">
+							<input type="hidden" id="hiddenLAt">
+							<input type="hidden" id="hiddenLONG">
+							<fieldset>
+								<legend>Filter by Searchterm</legend>
+								<p>
+								<label><input type="text" class="textbox" size="20" placeholder="search term"></label>
+								</p><p>
+								<button id="APPLYbutton">apply </button>
+								</p>
+							</fieldset>
+						</form>
 						<!-- ############### Aufgabe1a Form2 Ende -->
 
 						<div class="flexbox-container-2">

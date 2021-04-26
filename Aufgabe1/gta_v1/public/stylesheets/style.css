@@ -18,7 +18,7 @@ input:valid   { border-color: black}
 .header {background-color: rgb(129, 129, 129); padding: 15px; color: aliceblue}
 .footer {background-color: rgb(129, 129, 129); padding: 15px; color: aliceblue}
 
-#textbox {
+.textbox {
   height: 20px;
 }
 
