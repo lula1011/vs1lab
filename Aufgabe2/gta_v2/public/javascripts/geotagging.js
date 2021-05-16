@@ -13,10 +13,6 @@ console.log("The script is going to start...");
 // Hier wird die verwendete API für Geolocations gewählt
 // Die folgende Deklaration ist ein 'Mockup', das immer funktioniert und eine fixe Position liefert.
 
-Test = function(parameter) {
-    var i = 0;
-}
-
 GEOLOCATIONAPI = {
     getCurrentPosition: function(onsuccess) {
         onsuccess({
