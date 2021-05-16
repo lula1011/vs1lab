@@ -6,57 +6,96 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>GeoTagApp</title>
 		<link rel='stylesheet' href='./stylesheets/style.css'/>
+
+
 	</head>
 
-	<body>
+		<body>
 
-		<header>
-			<img src="./images/location.png" width="100"
+			<header class="header">
+
+				<img src="./images/location.png" width="100"
 					alt="an image of a map and location">
-			<h1>GeoTagApp</h1>
-			<nav>
-				<a href="#">About</a> | <a href="#">Help</a> | <a
-					href="/">Home</a>
-			</nav>
-		</header>
+					<h1>GeoTagApp</h1>
+					<nav>
+						<a href="#">About</a> | <a href="#">Help</a> | <a
+							 href="/">Home</a>
+					</nav>
+				</header>
 
 		<main>
+
+			<div class="flexbox-container-1">
+			<div class="flexbox-c1-item flexbox-c1-item-1">
 
 			<section class="tagging">
 				<h2>Tagging</h2>
 
 				<!-- ############### Aufgabe1a Form1 Start -->
 				<form id="tag-form" action="/tagging" method="post"></form>
+					<fieldset>
+						<legend> <b> Enter new GeoTag </b> </legend>
+						<form action="/action_page.php">
+							<p>
+							<label> latitude <br> <input id="latitude" placeholder="49.01379" size="20" type="text" required="required"  /> </label>
+				 			<p></p>
+							<label> longitude <br> <input id="longitude" placeholder="8.390071" size="20" type="text" required="required"  /> </label>
+							</p><p>
+							<label> name <br> <input id="name" placeholder="some name" size="20" maxlength="10" type="text" required="required"  /> </label>
+							</p><p>
+							<label> hashtag <br> <input id="hashtaginput" placeholder="# + max.10 letters" pattern="^[#]{1}[A-Za-z]{0,10}$"  size="20" type="text"  /> </label>
+							</p>
+							<button id="the-button">submit </button>
+						</form>
+				</fieldset>
+			</section>
+			</div>
 				<!-- ############### Aufgabe1a Form1 Ende -->
 
-			</section>
-
+			<div class="flexbox-c1-item flexbox-c1-item-2">
 			<section class="discovery">
 				<h2>Discovery</h2>
 
 				<!-- ############### Aufgabe1a Form2 Start -->
-				<form id="filter-form" action="/discovery" method="post"></form>
-				<!-- ############### Aufgabe1a Form2 Ende -->
+			<form id="filter-form" action="/discovery" method="post"></form>
+				<fieldset>
+					<legend> <b> Filter by Searchterm </b> </legend>
+					<p>
+					<label> <input type="text" id="textbox" placeholder="search term" size="20"  </label>
+					</p><p>
+					<button id="applybutton">	apply	</button>
+					</p>
+			</form>
+				</fieldset>
 
-				<div class="taglist">
-					<ul id="results">
-						<li>Castle (49.01379, 8.404435) #sight</li>
-						<li>IWI (49.01379, 8.390071) #edu</li>
-					</ul>
+				<!-- ############### Aufgabe1a Form2 Ende -->
+				<div class="flexbox-container-2">
+							<div class="flexbox-c2-item flexbox-c2-item-1">
+								<div class="taglist">
+									<ul id="results">
+										<li> Castle (49.01379, 8.404435) #sight</li>
+										<li>IWI (49.01379, 8.390071) #edu</li>
+									</ul>
+							</div>
 				</div>
 
+				<div class="flexbox-c2-item flexbox-c2-item-2">
 				<div class="tagmap">
-					<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-					<div class="caption">Result map</div>
+					<img id="result-img" width="47%" height="auto"  src="./images/mapview.jpg" alt="a map with locations"/>
+					<div class="caption">Result map
+
+					</div>
 				</div>
 
 			</section>
+				</section>
 
 		</main>
 
-		<footer>
+		<footer class="footer">
 			<span>2017 by LKIT</span>
 		</footer>
 
 	</body>
+
 </html>

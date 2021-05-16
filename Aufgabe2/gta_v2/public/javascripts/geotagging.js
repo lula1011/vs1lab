@@ -13,11 +13,11 @@ console.log("The script is going to start...");
 // Hier wird die verwendete API für Geolocations gewählt
 // Die folgende Deklaration ist ein 'Mockup', das immer funktioniert und eine fixe Position liefert.
 GEOLOCATIONAPI = {
-    getCurrentPosition: function(onsuccess) {
-        onsuccess({
+    getCurrentPosition: function(onsuccess) { //
+        onsuccess({         //Object
             "coords": {
-                "latitude": 49.013790,
-                "longitude": 8.390071,
+                "latitude": 40.730610,
+                "longitude": -73.935242,
                 "altitude": null,
                 "accuracy": 39,
                 "altitudeAccuracy": null,
@@ -46,11 +46,15 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
      * Bei Fehler Callback 'onerror' mit Meldung.
      * Callback Funktionen als Parameter übergeben.
      */
-    var tryLocate = function(onsuccess, onerror) {
-        if (geoLocationApi) {
-            geoLocationApi.getCurrentPosition(onsuccess, function(error) {
+    var tryLocate = function(onsuccess, onerror)
+    {
+        if (geoLocationApi)
+        {
+            geoLocationApi.getCurrentPosition(onsuccess, function(error)
+            {
                 var msg;
-                switch (error.code) {
+                switch (error.code)
+                {
                     case error.PERMISSION_DENIED:
                         msg = "User denied the request for Geolocation.";
                         break;
@@ -66,7 +70,9 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
                 }
                 onerror(msg);
             });
-        } else {
+        }
+        else
+        {
             onerror("Geolocation is not supported by this browser.");
         }
     };
@@ -82,7 +88,7 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
     };
 
     // Hier API Key eintragen
-    var apiKey = "YOUR_API_KEY_HERE";
+    var apiKey = "ExnUedkUKpTotPIXwNpcqEhrsIFpnNvs";
 
     /**
      * Funktion erzeugt eine URL, die auf die Karte verweist.
@@ -121,6 +127,27 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
 
         updateLocation: function() {
             // TODO Hier Inhalt der Funktion "update" ergänzen
+            //tryLocate(value coords ersetzen, alert)
+            var onsuccess = function(position)
+            {
+                var latitude = getLatitude(position);
+                var longitude = getLongitude(position);
+                document.getElementById("latitude").value = latitude;
+                document.getElementById("longitude").value = longitude;
+                document.getElementById("hiddenLAT").value = latitude;
+                document.getElementById("hiddenLONG").value = longitude;
+
+                var mapURL = getLocationMapSrc(latitude, longitude); //returns map-snippet URL
+                document.getElementById("result-img").src = mapURL;
+            };
+
+            var onerror = function(errormsg)
+            {
+                alert(errormsg);
+            };
+
+            tryLocate(onsuccess, onerror);
+
         }
 
     }; // ... Ende öffentlicher Teil
@@ -132,6 +159,7 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
  * des Skripts.
  */
 $(function() {
-    alert("Please change the script 'geotagging.js'");
+    alert("Your current position is set as default.");
     // TODO Hier den Aufruf für updateLocation einfügen
+    gtaLocator.updateLocation();
 });
